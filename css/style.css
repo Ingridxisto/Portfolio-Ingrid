@@ -8,6 +8,7 @@
 body{
     background-color: #a36eff;
     height: 100vh;
+    overflow-x: hidden;
 }
 
 .interface{
@@ -272,7 +273,7 @@ section.portfolio .flex{
     width: 360px;
     height: 460px;
     background-size: cover;
-    background-position: 100% 0%;
+    background-position: top;
     transition: 8s;
     cursor: pointer;
     border-radius: 40px;
@@ -303,6 +304,66 @@ section.portfolio .flex{
 
 .overlay:hover{
     opacity: 1;
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 40px;
+  padding: 20px 0;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none; /* Chrome */
+}
+
+.btn-left,
+.btn-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: white;
+  font-size: 30px;
+  padding: 10px 14px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 2;
+
+  /* Pra garantir que o tamanho não mude */
+  width: 44px;
+  height: 44px;
+
+  /* Centralizar o símbolo dentro do botão */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Transição suave */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
+}
+
+.btn-left {
+  left: -10px;
+}
+
+.btn-right {
+  right: -10px;
+}
+
+/* Efeito hover: só muda cor e dá um leve scale */
+.btn-left:hover,
+.btn-right:hover {
+  background: rgba(0, 0, 0, 0.85);
+  transform: translateY(-50%) scale(1.1);
 }
 
 footer{
@@ -400,6 +461,67 @@ footer .line-footer p a{
 
     section.portfolio .flex{
         gap: 60px;
+    }
+
+        /* Container geral do portfolio */
+    section.portfolio {
+        padding: 40px 8%; /* menos padding que no desktop, para mobile */
+    }
+
+    /* Ajusta o título para ficar menor e centralizado */
+    section.portfolio h2.titulo {
+        font-size: 28px;
+        line-height: 32px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    /* O container da interface para ficar em coluna */
+    section.portfolio .interface {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Carousel-container ocupa 100% e centralizado */
+    section.portfolio .carousel-container {
+        width: 100%;
+        max-width: 360px; /* limite para não esticar demais */
+        position: relative;
+    }
+
+    /* Carousel ajusta para coluna para que os cards fiquem um abaixo do outro (se quiser) */
+    section.portfolio .carousel {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 20px;
+        padding: 10px 0;
+        scroll-behavior: smooth;
+    }
+
+    /* Cards do portfolio ocupam largura total menor */
+    section.portfolio .img-port {
+        width: 100%;
+        max-width: 320px;
+        height: 400px;
+        margin: 0 auto;
+    }
+
+    /* Botões de navegação fixos e com tamanho menor */
+    section.portfolio .btn-left,
+    section.portfolio .btn-right {
+        width: 36px;
+        height: 36px;
+        font-size: 24px;
+        top: 45%;
+    }
+
+    section.portfolio .btn-left {
+        left: 0;
+    }
+
+    section.portfolio .btn-right {
+        right: 0;
     }
 
     footer .flex{
