@@ -6,7 +6,8 @@
 }
 
 body{
-    background-color: #a36eff;
+    background-color: #27173a;
+    color: #fff;
     height: 100vh;
     overflow-x: hidden;
 }
@@ -20,6 +21,11 @@ body{
     width: 200px;
     filter: drop-shadow(0 4px 8px #4c017ab0);
     border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover{
+    transform: scale(1.1);
 }
 
 .flex{
@@ -30,16 +36,22 @@ body{
     padding: 10px 40px;
     font-size: 19px;
     font-weight: 600;
-    background-color: #8a0ee8;
+    background-color: #9878f8;
+;
     border: 0;
     border-radius: 30px;
     cursor: pointer;
-    transition: .2s;
-    color: #fff;
+    transition: .3s;
+    color: #ffffff;
+}
+
+.btn-contato button:hover {
+    box-shadow: 0px 0px 15px #818CF8;
+    transform: scale(1.1);
 }
 
 h2.titulo{
-    color: #fff;
+    color: #ffffff;
     font-size: 38px;
     text-align: center;
 }
@@ -48,10 +60,6 @@ h2.titulo span{
     color: #8a0ee8;
 }
 
-button:hover{
-    box-shadow: 0px 0px 8px #8b00f5;
-    transform: scale(1.05);
-}
 
 header{
     padding: 40px 4%;
@@ -64,7 +72,7 @@ header > .interface{
 }
 
 header a{
-    color: #f0f0f0;
+    color: #a09c9c;
     text-decoration: none;
     display: inline-block;
     transition: .2s;
@@ -73,7 +81,7 @@ header a{
 
 header nav.menu-desktop a:hover{
     color: #ffffff;
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 header nav ul{
@@ -91,12 +99,12 @@ header nav.menu-desktop ul li{
 }
 
 .btn-abrir-menu i{
-    color: #5c00a3;
+    color: #aa56eb;
     font-size: 40px;
 }
 
 .menu-mobile{
-    background-color: #8540fc;
+    background-color: linear-gradient(145deg, #8f5ae9, #9878f8);;
     height: 100vh;
     position: fixed;
     top: 0;
@@ -120,7 +128,7 @@ header nav.menu-desktop ul li{
 }
 
 .menu-mobile .btn-fechar i{
-    color: #5d00a3;
+    color: #5e0c9d;
     font-size: 30px;
 }
 
@@ -134,6 +142,7 @@ header nav.menu-desktop ul li{
     font-weight: 300;
     padding: 20px 8%;
     display: block;
+    transition: 0.3s;
 }
 
 .menu-mobile nav ul li a:hover{
@@ -200,6 +209,7 @@ section.especialidades .flex{
     border-radius: 20px;
     margin-top: 45px;
     transition: .2s;
+    box-shadow: 0 0 10px #00000050;
 }
 
 .especialidades .especialidades-box:hover{
@@ -257,6 +267,11 @@ section.sobre .flex{
     margin: 0 5px;
     transition: .2s;
     color: #fff;
+}
+
+.btn-social button:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px #666565;
 }
 
 section.portfolio{
@@ -375,6 +390,13 @@ footer .flex{
     justify-content: space-between;
 }
 
+footer .logo-footer img {
+    border-radius: 10%;
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
 footer .line-footer{
     padding: 20px 0;
 }
@@ -449,26 +471,10 @@ footer .line-footer p a{
         width: 100%;
     }
 
-    section.portfolio{
-        padding: 80px 8%;
-    }
-
-    .img-port{
-        width: 100%;
-        max-width: 360px;
-        margin: 0 auto;
-    }
-
-    section.portfolio .flex{
-        gap: 60px;
-    }
-
-        /* Container geral do portfolio */
     section.portfolio {
-        padding: 40px 8%; /* menos padding que no desktop, para mobile */
+        padding: 40px 8%; /* menos padding que no desktop */
     }
 
-    /* Ajusta o título para ficar menor e centralizado */
     section.portfolio h2.titulo {
         font-size: 28px;
         line-height: 32px;
@@ -476,51 +482,50 @@ footer .line-footer p a{
         margin-bottom: 20px;
     }
 
-    /* O container da interface para ficar em coluna */
-    section.portfolio .interface {
+    /* .flex precisa ser display flex e nowrap no mobile */
+    section.portfolio .flex {
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        flex-wrap: nowrap;
+        gap: 20px;
+        overflow-x: auto; /* para scroll horizontal */
+        -webkit-overflow-scrolling: touch; /* suaviza o scroll no iOS */
+        margin-top: 40px; /* ajuste visual */
+        justify-content: flex-start; /* ou space-between/around se preferir */
     }
 
-    /* Carousel-container ocupa 100% e centralizado */
-    section.portfolio .carousel-container {
+    .img-port {
+        flex: 0 0 auto; /* impede que o item encolha e permite largura fixa */
+        width: 320px; /* largura fixa para o card */
+        height: 400px;
+        border-radius: 40px;
+        background-size: cover;
+        background-position: top;
+        cursor: pointer;
+        position: relative;
+
+    }
+
+    .carousel-container {
         width: 100%;
-        max-width: 360px; /* limite para não esticar demais */
+        overflow: visible;
         position: relative;
     }
 
-    /* Carousel ajusta para coluna para que os cards fiquem um abaixo do outro (se quiser) */
-    section.portfolio .carousel {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        gap: 20px;
-        padding: 10px 0;
-        scroll-behavior: smooth;
-    }
-
-    /* Cards do portfolio ocupam largura total menor */
-    section.portfolio .img-port {
-        width: 100%;
-        max-width: 320px;
-        height: 400px;
-        margin: 0 auto;
-    }
-
-    /* Botões de navegação fixos e com tamanho menor */
-    section.portfolio .btn-left,
-    section.portfolio .btn-right {
+    /* Botões com tamanho menor e posicionamento mais alinhado */
+    .btn-left,
+    .btn-right {
         width: 36px;
         height: 36px;
         font-size: 24px;
         top: 45%;
+        background: rgba(0, 0, 0, 0.6);
     }
 
-    section.portfolio .btn-left {
+    .btn-left {
         left: 0;
     }
 
-    section.portfolio .btn-right {
+    .btn-right {
         right: 0;
     }
 
