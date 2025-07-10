@@ -54,7 +54,8 @@ Ele conta com um menu adaptável (desktop e mobile), seção de especialidades, 
 └── README.md
 ```
 
-📫 Contato
+📫 Contato   
+   
 💼 [LinkedIn](https://www.linkedin.com/in/ingridxisto/)
 
 💻 [GitHub](https://github.com/Ingridxisto)
