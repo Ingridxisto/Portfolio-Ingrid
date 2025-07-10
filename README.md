@@ -35,18 +35,9 @@ Ele conta com um menu adaptável (desktop e mobile), seção de especialidades, 
 
 ---
 
-## 📸 Captura de Tela
-
-
-<img width="1351" height="3372" alt="ingridxisto github io_Portfolio-Ingrid_ (1)" src="https://github.com/user-attachments/assets/8c03c7c1-c762-4dcc-b065-6880eca9d303" />
-
----<img width="1016" height="10942" alt="ingridxisto github io_Portfolio-Ingrid_ (2)" src="https://github.com/user-attachments/assets/8e4ebbc5-0675-45a8-866d-8e1c3c39608f" />
-
-
 ## 🔗 Acesse Online
 
-👉 [Ver Portfólio Online](#)  
-> *(Link direto quando estiver hospedado no GitHub Pages, Vercel, Netlify ou outro serviço.)*
+👉 [Ver Portfólio Online](https://ingridxisto.github.io/Portfolio-Ingrid/)  
 
 ---
 
@@ -61,3 +52,16 @@ Ele conta com um menu adaptável (desktop e mobile), seção de especialidades, 
 ├── menu.js
 ├── index.html
 └── README.md
+
+📫 Contato
+💼 LinkedIn
+
+💻 GitHub
+
+📧 ingridxisto@gmail.com
+
+📌 Licença
+Este projeto está sob a licença MIT.
+Sinta-se à vontade para utilizar como base, desde que mencione os créditos. 💜
+
+Desenvolvido com dedicação por Ingrid Xisto 👩‍💻
